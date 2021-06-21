@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Create a Factory Function and give this function a suitable name
+        // Have its parameters add these parameter values: 'title', 'description', 'date_created', 'date_due', 'tagname'
+        // Within your function create private variables that are set to the same name as the parameter values above
+        // Have your property values be equal to the respective parameters they have been named after
+        // e.g. description: description
+
+        let Taskdetails = (title, date_created, date_due, tagname) => {
+            return {
+                _title: title,
+                _date_created: date_created,
+                _date_due: date_due,
+                _tagname: tagname,
+
+                description: function description() {
+                    console.log("Task Name: " + this._title + " | " +
+                        "Date Created: " + this._date_created + " | " +
+                        "Date Due: " + this._date_due + " | " +
+                        "Tags: " + this._tagname
+                    )
+                }
+            }
+        }
+
+
+        // Declare a variable of 'todo' and have it equal to an instantiation of your Factory Function name, using the arguments in brackets below
+        // Your 'todo' variable should now be equal to an object, which allows you to use concatenation on it.
+        // To avoid confusion, going forward we are going to refer to the 'todo' variable as an object
+
+
+        const todo = Taskdetails('Head to Gym', 2018 - 04 - 24, 2020 - 12 - 06, ['exercise', 'fitness', 'routines']);
+        todo.description;
+
+        // Using the 'todo' object declared above:
+        // Console.log the property value 'tagname' from your Factory Function, it should display the value "['exercise', ' fitness', ' routines']"
+        // Feel free to try and console log.all your other property values declared within the Factory Function
+
+        console.log(todo.tagname);
+
+
+
+        // After having successfully completed the instrutions above, add these changes to your code above:
+        // Remove the parameter and argument of 'description' from your factory function, as well as from the 'todo' object
+        // Replace your description property within your factory function, to equal a function which neatly returns all the properties
+        // e.g. description: function() {
+        //       return("Task Name: " + this.title + " | " +
+        //         "Date Created: " + this.date_created + " | " +
+        //         "Date Due: " + this.date_due + " | " +
+        //         "Tags: " + this.tagname );
+        //      },
+
+        // Using the 'todo' object, console.log the description property
+
+
+        //PART 2
+
+        // Create an Object Constructor called "Task"
+        // Within your object parameters add the parameter values of: 'title', 'description', 'date_created', 'date_due', 'tagname'
+        // Within your object create private variables that are set to the same name as the parameter values above
+        // Have your private variables equal to the respective parameters they have been named after
+        // e.g. this.description = description
+
+        function Task(title, description, date_created, date_due, tagname) {
+            this._title = title;
+            this._description = description;
+            this._date_created = date_created;
+            this._date_due = date_due;
+            this._tagname = tagname;
+        }
+
+        // Using the code below, declare a variable of 'todo' and have it equal to an instantiation of the Object Below
+        // Your 'todo' variable should now be equal to an object which allows you to use concatenation on it.
+        // To avoid confusion, going forward we are going to refer to the 'todo' variable as an object
+        const todo1 = new Task('Head to Gym', '', 2018 - 04 - 24, 2020 - 12 - 06, ['exercise', 'fitness', ' routines'])
+
+        // Using the 'todo' object declared above:
+        // Console.log the private variable 'title' from your Task Object. It should display the value 'Head to Gym'.
+        // Feel free to try and console.log all your other private variables declared within the Task Object
+
+        todo1.title;
+
+        //Add a prototype of 'completed' to the Task object and set it to a boolean value of 'true'
+        //Console.log this prototype value, by using the 'todo' object
+
+        Task.prototype.completed = Boolean(true);
+        todo1.completed;
+
+    </script>
+
+</body>
+
+</html>
