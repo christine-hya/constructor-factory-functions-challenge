@@ -16,20 +16,21 @@
         // Have your property values be equal to the respective parameters they have been named after
         // e.g. description: description
 
-        let Taskdetails = (title, date_created, date_due, tagname) => {
+        let Taskdetails = (title, description, date_created, date_due, tagname) => {
             return {
                 _title: title,
                 _date_created: date_created,
                 _date_due: date_due,
                 _tagname: tagname,
 
-                description: function description() {
-                    console.log("Task Name: " + this._title + " | " +
-                        "Date Created: " + this._date_created + " | " +
-                        "Date Due: " + this._date_due + " | " +
-                        "Tags: " + this._tagname
-                    )
+                _description: function () {
+                    return (
+                        "Task Name: " + this.title + " | " +
+                        "Date Created: " + this.date_created + " | " +
+                        "Date Due: " + this.date_due + " | " +
+                        "Tags: " + this.tagname)
                 }
+
             }
         }
 
@@ -39,15 +40,15 @@
         // To avoid confusion, going forward we are going to refer to the 'todo' variable as an object
 
 
-        const todo = Taskdetails('Head to Gym', 2018 - 04 - 24, 2020 - 12 - 06, ['exercise', 'fitness', 'routines']);
-        todo.description;
+        let todo = Taskdetails("Head to Gym", "", 2018 - 04 - 24, 2020 - 12 - 06, ["exercise", "fitness", "routines"]);
+
 
         // Using the 'todo' object declared above:
         // Console.log the property value 'tagname' from your Factory Function, it should display the value "['exercise', ' fitness', ' routines']"
         // Feel free to try and console log.all your other property values declared within the Factory Function
 
         console.log(todo.tagname);
-
+        console.log(todo._description);
 
 
         // After having successfully completed the instrutions above, add these changes to your code above:
